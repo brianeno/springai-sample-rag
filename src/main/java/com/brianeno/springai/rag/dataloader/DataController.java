@@ -12,12 +12,9 @@ public class DataController {
 
     private final DataLoadingService dataLoadingService;
 
-    private final JdbcTemplate jdbcTemplate;
-
     @Autowired
     public DataController(DataLoadingService dataLoadingService, JdbcTemplate jdbcTemplate) {
         this.dataLoadingService = dataLoadingService;
-        this.jdbcTemplate = jdbcTemplate;
     }
 
     @PostMapping("/load")
@@ -33,16 +30,13 @@ public class DataController {
 
     @GetMapping("/count")
     public int count() {
-        String sql = "SELECT COUNT(*) FROM vector_store";
-        return jdbcTemplate.queryForObject(sql, Integer.class);
+        return dataLoadingService.count();
     }
 
     @DeleteMapping("/delete")
     public void delete() {
-        String sql = "DELETE FROM vector_store";
-        jdbcTemplate.update(sql);
+        dataLoadingService.delete();
     }
-
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleException(Exception e) {
