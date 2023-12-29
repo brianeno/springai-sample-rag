@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "9e3be779-7852-4b27-aa19-33d75b6468a3",
+		"name": "SpringAIRag",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2294643"
+	},
+	"item": [
+		{
+			"name": "LoadDocument",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/data/load",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"data",
+						"load"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDocument Count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/data/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"data",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Embeddings",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/data/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"data",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query Model",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/question?question=what effect have the layoffs had on the tech industry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"question"
+					],
+					"query": [
+						{
+							"key": "question",
+							"value": "what effect have the layoffs had on the tech industry"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query Model Default",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/question",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"question"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
